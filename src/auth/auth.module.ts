@@ -11,17 +11,12 @@ import { UsersModule } from '../users/users.module';
 const { secret, expiresIn } = JWT_CONFIG;
 
 @Module({
-  imports: [
-    UsersModule,
-    PassportModule, //.register({ defaultStrategy: 'jwt' }),
-    JwtModule.register({ secret, signOptions: { expiresIn } }),
-  ],
-  providers: [
-    AuthService,
-    JwtStrategy,
-    LocalStrategy,
-    BasicStrategy,
-  ],
-  exports: [ AuthService ],
+    imports: [
+        UsersModule,
+        PassportModule, //.register({ defaultStrategy: 'jwt' }),
+        JwtModule.register({ secret, signOptions: { expiresIn } }),
+    ],
+    providers: [AuthService, JwtStrategy, LocalStrategy, BasicStrategy],
+    exports: [AuthService],
 })
 export class AuthModule {}

@@ -6,23 +6,22 @@ import { User } from '../models';
 
 @Injectable()
 export class UsersService {
-  private readonly users: Record<string, User>;
+    private readonly users: Record<string, User>;
 
-  constructor() {
-    this.users = {}
-  }
+    constructor() {
+        this.users = {};
+    }
 
-  findOne(userId: string): User {
-    return this.users[ userId ];
-  }
+    findOne(userId: string): User {
+        return this.users[userId];
+    }
 
-  createOne({ name, password }: User): User {
-    const id = v4(v4());
-    const newUser = { id: name || id, name, password };
+    createOne({ name, password }: User): User {
+        const id = v4(v4());
+        const newUser = { id: name || id, name, password };
 
-    this.users[ id ] = newUser;
+        this.users[id] = newUser;
 
-    return newUser;
-  }
-
+        return newUser;
+    }
 }
