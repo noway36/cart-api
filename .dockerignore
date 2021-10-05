@@ -1,0 +1,11 @@
+node_modules
+test
+dist
+.elasticbeanstalk/*
+.editorconfig
+.gitignore
+.eslintrc.js
+.prettierrc
+.git
+.gitignore
+README.md
